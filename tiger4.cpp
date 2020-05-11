@@ -14,7 +14,7 @@ class Tiger
     // running
     void run(int t_speed) {
         speed = t_speed;
-        cout << "The tiger is running. Speed: " << t_speed << endl;
+        cout << "The tiger is running. Speed: " << speed << endl;
     }
 
 public:
