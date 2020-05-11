@@ -32,9 +32,9 @@ public:
         }
     }
 
-    // Default constructor
+    // Default constructor with default values of  arguments
     Tiger(int t_age=7, int t_size=9, int t_speed=0, string t_breed= "bengal", string t_skinColour = "white", bool t_isHungry= true):
-        age(t_age), speed(t_speed), breed(t_breed), skinColour(t_skinColour), size(t_size), isHungry(t_isHungry)// default constructor with arguments
+        age(t_age), speed(t_speed), breed(t_breed), skinColour(t_skinColour), size(t_size), isHungry(t_isHungry)
     {
      
     }
