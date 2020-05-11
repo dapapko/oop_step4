@@ -16,15 +16,15 @@ class Tiger
         speed = t_speed;
         cout << "The tiger is running. Speed: " << t_speed << endl;
     }
-    
+
 public:
     // Friendly operator function for output. Definition.
-    friend ostream &operator<<( ostream &output, const Tiger& T );
+    friend ostream& operator<<(ostream& output, const Tiger& T);
     // hunting
     void hunt(int t_speed = 30) {
         if (!isHungry) cout << "Tiger is not hungry, so he don't hunt" << endl;
         else {
-            if (age <2) cout << "Tiger is hungry, he makes known about it tigress" << endl;
+            if (age < 2) cout << "Tiger is hungry, he makes known about it tigress" << endl;
             else {
                 cout << "Tiger is hungry, it begins to hunt." << endl;
                 run(t_speed);
@@ -33,48 +33,22 @@ public:
     }
 
     // Default constructor
-    Tiger() // default constructor with arguments
+    Tiger(int t_age=7, int t_size=9, int t_speed=0, string t_breed= "bengal", string t_skinColour = "white", bool t_isHungry= true):
+        age(t_age), speed(t_speed), breed(t_breed), skinColour(t_skinColour), size(t_size), isHungry(t_isHungry)// default constructor with arguments
     {
-        file.open(fileName);
-        if (file.is_open()) {
-            cout << "Initialization from file" << endl;
-            // Initialize object using data from file
-            file >> age;
-            file >> size;
-            file >> speed;
-            file >> ;
-            file >> canMakeCappuccino;
-            file >> price;
-            file >> model;
-        } else {
-            // Default values for initialization
-            cout << "File not found. Default initialization." << endl;
-            canMakeCappuccino = true;
-            price = 5000;
-            pressure = 15;
-            colour = "black";
-            temperature = 0;
-            numberOfCups = 1;
-            model = "Vitek VT-1525";
-        }
-        age = t_age;
-        size= t_size;
-        speed = t_speed;
-        breed = t_breed;
-        skinColour = t_skinColour;
-        isHungry = t_isHungry;
+     
     }
 
     // copying constructor
-    Tiger(Tiger const &instance):
-            age(instance.age), size(instance.size),
-            speed(instance.speed), breed(instance.breed),
-            skinColour(instance.skinColour), isHungry(instance.isHungry)
+    Tiger(Tiger const& instance) :
+        age(instance.age), size(instance.size),
+        speed(instance.speed), breed(instance.breed),
+        skinColour(instance.skinColour), isHungry(instance.isHungry)
     {}
 };
 
 // Friendly operator function for output. Implementation.
-ostream &operator<<( ostream &output, const Tiger& T ) {
+ostream& operator<<(ostream& output, const Tiger& T) {
     output << "Breed: " << T.breed << endl;
     output << "Colour of skin: " << T.skinColour << endl;
     output << "Age: " << T.age << endl;
